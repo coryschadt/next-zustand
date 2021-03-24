@@ -5,8 +5,8 @@ import { Dropdown, DropdownTrigger } from '../components/dropdown'
 
 import { useStore } from '../store'
 
-export default function Home () {
-  const setModal = useStore(state => state.setModal)
+export default function About () {
+  const { count, increase, removeAllCounts } = useStore()
 
   return (
     <div className={styles.container}>
@@ -15,13 +15,14 @@ export default function Home () {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <button onClick={() => setModal('ExampleModal')}>Modal</button>
-      <br />
-      <br />
+      <h1>About</h1>
+
       <div className='dropdown-user'>
+
         <DropdownTrigger className='user-trigger' uid='user-menu'>
           My Trigger
         </DropdownTrigger>
+
         <Dropdown uid='user-menu'>
           <ul>
             <li>
@@ -29,6 +30,8 @@ export default function Home () {
             </li>
           </ul>
         </Dropdown>
+
+
       </div>
     </div>
   )
